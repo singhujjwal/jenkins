@@ -22,7 +22,7 @@ pipeline {
         stage('Example-Use-built-in-step-accepting-block'){
             steps {
                 windows{
-                    bat "cmd /?"
+                    sh "echo 'Running via a block in step' "
                 }
             }
         }

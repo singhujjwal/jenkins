@@ -1,5 +1,6 @@
 def call(Closure body) {
-    node('windows') {
+    // just an example
+    node('DONOTUSE') {
         body()
     }
 }

@@ -6,4 +6,8 @@ class Utilities implements Serializable {
     // steps.sh "${steps.tool 'Maven'}/usr/bin/mvn -o ${args}"
     steps.sh "${steps.tool 'Echo'}echo -o ${args}"
   }
+
+  def printsomething(){
+    println ("Print something function from the class")
+  }
 }
