@@ -12,7 +12,7 @@ pipeline {
                 }
             }
         }
-        stage ('Example-Use-Global-Vars') {
+        stage ('Example-Use-built-in-step') {
             steps {
                     sayHello 'Joe'
                     sayHello()
