@@ -11,7 +11,7 @@ pipeline {
                     log.warning 'Nothing to do!'
                 }
             }
-        },
+        }
         stage ('Example-Use-Global-Vars') {
             steps {
                     sayHello 'Joe'
@@ -19,8 +19,5 @@ pipeline {
 
             }
         }
-
-
-  
     }
 }
