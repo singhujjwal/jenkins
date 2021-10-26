@@ -3,7 +3,7 @@
 pipeline {
     agent none
     stages {
-        stage ('Example') {
+        stage ('Example-Use-Global-Vars') {
             steps {
                 // log.info 'Starting' 
                 script { 
@@ -11,6 +11,16 @@ pipeline {
                     log.warning 'Nothing to do!'
                 }
             }
+        },
+        stage ('Example-Use-Global-Vars') {
+            steps {
+                    sayHello 'Joe'
+                    sayHello()
+
+            }
         }
+
+
+  
     }
 }
