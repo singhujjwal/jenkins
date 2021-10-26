@@ -9,5 +9,6 @@ class Utilities implements Serializable {
 
   def printSomething(){
     println ("Print something function from the class")
+    steps.sh "echo 'Print Something from inside the class using steps'"
   }
 }

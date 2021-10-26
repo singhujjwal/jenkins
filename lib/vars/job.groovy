@@ -6,5 +6,4 @@ def call(
 
     def utils = new Utilities();
     utils.printSomething();
-     
 }
