@@ -5,5 +5,5 @@ def call(
 ) {
 
     def utils = new Utilities();
-    utils.printSomething();
+    utils.mvn("Ujjwal");
 }
