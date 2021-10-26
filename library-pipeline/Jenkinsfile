@@ -19,5 +19,12 @@ pipeline {
 
             }
         }
+        stage('Example-Use-built-in-step-accepting-block'){
+            steps {
+                windows{
+                    bat "cmd /?"
+                }
+            }
+        }
     }
 }
