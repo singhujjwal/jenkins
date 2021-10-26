@@ -1,4 +1,4 @@
-import org.foo.Zot
+import org.foo.Utilities
 
 def call(
     body
@@ -6,5 +6,8 @@ def call(
 
     println("Printed from inside the call function..")
     printFromInsideLibrary()
+
+    def utils = new Utilities();
+    utils.printSomething();
      
 }

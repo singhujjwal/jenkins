@@ -7,7 +7,7 @@ class Utilities implements Serializable {
     steps.sh "${steps.tool 'Echo'}echo -o ${args}"
   }
 
-  def printsomething(){
+  def printSomething(){
     println ("Print something function from the class")
   }
 }
