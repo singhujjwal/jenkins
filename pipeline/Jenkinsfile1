@@ -71,7 +71,7 @@ pipeline {
 
                 script {
                                 def terraformDir = 'central-tools-eks-cluster'
-                                echo "${terraformDir}"
+                                echo '${terraformDir}'
                         }
             }
         }
