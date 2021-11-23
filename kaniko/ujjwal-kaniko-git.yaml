@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kaniko
+spec:
+  containers:
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:debug
+    args: ["--context=git://singhujjwal:$TOKEN@github.com/singhujjwal/kaniko-demo",
+            "--destination=singhujjwal/devops-toolkit:1.0.0"]
+    volumeMounts:
+      - name: kaniko-secret
+        mountPath: /kaniko/.docker
+    env:
+      - name: TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: github-token
+            key: github-token-name
+  restartPolicy: Never
+  volumes:
+    - name: kaniko-secret
+      secret:
+        secretName: regcred
+        items:
+          - key: .dockerconfigjson
+            path: config.json

@@ -1,0 +1,81 @@
+task setWhoamiProperty {
+    doLast {
+        new ByteArrayOutputStream().withStream { os ->
+            def result = exec {
+                executable = 'whoami'
+                standardOutput = os
+            }
+            ext.whoami = os.toString()
+        }
+    }
+}
+
+task setHostnameProperty {
+    doLast {
+        new ByteArrayOutputStream().withStream { os ->
+            def result = exec {
+                executable = 'ls'
+                standardOutput = os
+            }
+            ext.hostname = os.toString()
+        }
+    }
+}
+
+task printBuildInfo {
+    //dependsOn setHostnameProperty
+    doLast {
+        println "Ujjwal Singh"
+        // println whoami
+        //println hostname
+         
+    }
+}
+
+
+task execSomething {
+  doFirst {
+    exec {
+      commandLine 'ls', '-latr'
+      standardOutput = new ByteArrayOutputStream()
+
+      //extension method execSomething.output() can be used to obtain the output:
+      ext.output = {
+        return standardOutput.toString()
+      }
+    }
+  }
+}
+
+
+def getVersionName2() {
+    return "ls -latr".execute().text.trim()
+}
+ 
+
+def getVersionName = { ->
+    def myStdOut = new ByteArrayOutputStream()
+    exec {
+        commandLine "ls", "-latr"
+        standardOutput = myStdOut
+    }
+    return myStdOut.toString().trim()
+}
+
+
+exec {
+            description "compose up for local monitoring pipeline"
+            workingDir '.'
+            commandLine '/bin/sh','-c','docker-compose -f docker-compose.yml -f config/docker-compose-monitoring.yml up --build --detach'
+        }
+
+ 
+task printGitVersionName {
+    doLast {
+        println getVersionName2()
+        println getVersionName()
+    }
+}
+
+
+

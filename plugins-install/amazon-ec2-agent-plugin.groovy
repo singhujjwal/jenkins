@@ -39,7 +39,7 @@ def slaveTemplateApSouth1Parameters = [
   remoteAdmin:              'ubuntu',
   stopOnTerminate:          false,
   subnetId:                 'subnet-647d830f',
-  tags:                     new EC2Tag('Name', 'jenkins-slave'),
+  tags:                     new EC2Tag('Name', 'jenkins-slave', ''),
   tmpDir:                   '',
   type:                     't2.medium',
   tenancy:                  false,
