@@ -25,8 +25,7 @@ pipeline {
             steps {
                 echo 'Hello world step 1'
                 echo "${A_KEY_PSW}"
-                echo '${A_KEY_PSW}'
-                sh 'printenv'
+                echo '$A_KEY_PSW'
             }
         }
     }
