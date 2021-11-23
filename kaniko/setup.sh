@@ -17,9 +17,9 @@ Host github.com
 EOF 
 
 
-kubectl create secret generic github-token --from-literal=github-token-name='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'
+kubectl create secret generic github-token --from-literal=github-token-name='ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
-export TOKEN='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'
+export TOKEN='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
 kubectl create secret generic ssh-key-secret \
     --from-file=ssh-privatekey=.ssh/id_rsa \
