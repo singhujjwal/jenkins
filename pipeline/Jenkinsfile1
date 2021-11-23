@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Example Test') {
             steps {
-                echo 'Hello, JDK, if there are any :)'
+                echo 'Hello, JDK, if there are any.'
                 sh 'java -version'
             }
         }
