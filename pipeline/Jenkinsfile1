@@ -26,7 +26,9 @@ pipeline {
                 echo 'Hello world step 1'
                 echo "Using double quotes...."
                 echo "${A_KEY_PSW}"
-                echo "Using single quotes...."
+                echo "Trying to print password as part of sh command of echo"
+                sh 'echo "${A_KEY_PSW}"'
+                echo "Using single quotes wont do the groovy string interpolation...."
                 echo '$A_KEY_PSW'
             }
         }
