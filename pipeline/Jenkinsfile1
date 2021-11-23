@@ -68,6 +68,15 @@ pipeline {
                 sh 'echo "${A_KEY_PSW}"'
                 echo "Using single quotes wont do the groovy string interpolation...."
                 echo '$A_KEY_PSW'
+
+                script {
+                                final terraformDir = 'central-tools-eks-cluster'
+                        }
+                                sh """
+                                echo '${terraformDir}' 
+                                """
+
+
             }
         }
         stage('parameter') {
