@@ -2,9 +2,10 @@ node {
     stage('Example') {
         if (env.BRANCH_NAME == 'main') {
             echo 'I only execute on the master branch'
-
-            println env
+            echo env.BRANCH_NAME
+            sh 'printenv'
         } else {
+            sh 'printenv'
             echo 'I execute elsewhere'
         }
     }
