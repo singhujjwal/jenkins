@@ -1,6 +1,9 @@
 pipeline {
     agent any
     //agent none in case if you want to define the agent at stage level
+    environment { 
+        CC = 'clang'
+    }
     stages {
         stage('Example Build') {
             // Can have a docker agent at stage level as well
@@ -15,8 +18,13 @@ pipeline {
             }
         }
         stage('Ujjwal') {
+            environment {
+                //Setup an environment variable 
+                A_KEY = credentials('ujjwal-github-git-https-creds')
+            }
             steps {
                 echo 'Hello world step 1'
+                sh 'printenv'
             }
         }
     }
