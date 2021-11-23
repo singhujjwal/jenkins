@@ -18,9 +18,24 @@ pipeline {
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
+    
+    /*
+    The "tools" directive can be added either at a pipeline level or at the stage level. 
+    It allows you to specify which maven, jdk, or gradle version to use on your script. 
+    Any of these tools, the three supported at the time of writing, must be configured 
+    on the "Global tool configuration" Jenkins menu.
+
+    Also, Jenkins will attempt to install the listed tool (if it is not installed yet). 
+    By using this directive you can make sure a specific version required for your
+     project is installed.
+
+    //TODO:
+    
     tools {
-        maven 'apache-maven-3.0.1' 
+        maven 'apache-maven-3.0.1'
     }
+
+    */
 
     stages {
         stage('Example Build') {
