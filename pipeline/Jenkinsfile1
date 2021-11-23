@@ -75,6 +75,10 @@ pipeline {
                                 echo '${terraformDir}' 
                                 """
                         }
+
+                         sh """
+                                echo '${terraformDir}' 
+                         """
                                 
 
 
