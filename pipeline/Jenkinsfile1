@@ -24,7 +24,9 @@ pipeline {
             }
             steps {
                 echo 'Hello world step 1'
+                echo "Using double quotes...."
                 echo "${A_KEY_PSW}"
+                echo "Using single quotes...."
                 echo '$A_KEY_PSW'
             }
         }
