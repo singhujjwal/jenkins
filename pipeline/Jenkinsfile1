@@ -70,7 +70,7 @@ pipeline {
                 echo '$A_KEY_PSW'
 
                 script {
-                                final terraformDir = 'central-tools-eks-cluster'
+                                def terraformDir = 'central-tools-eks-cluster'
                                 sh 'echo "${terraformDir}"'
                         }
 
