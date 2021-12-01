@@ -46,7 +46,7 @@ pipeline {
                 ENV_AT_STAGE_LEVEL = "env_at_stageS_level"
         }
          *******************************************************************/
-         
+
         stage('Example Build') {
             options {
                 timeout(time: 1, unit: 'HOURS') 
@@ -63,7 +63,7 @@ pipeline {
                 echo 'Hello, JDK, if there are any.'
             }
         }
-        stage('Ujjwal') {
+        stage('Check password priint') {
             environment {
                 //Setup an environment variable 
                 A_KEY = credentials('ujjwal-github-git-https-creds')
@@ -77,15 +77,17 @@ pipeline {
                 echo "Trying to print password as part of sh command of echo"
                 sh 'echo "${A_KEY_PSW}"'
                 echo "Using single quotes wont do the groovy string interpolation...."
-                echo '$A_KEY_PSW'
-
+                echo '${A_KEY_PSW}'
+                echo 'Not using braces doesnt interpolate variable but not same for params maybe'
                 script {
+                                echo "But the same variable can be interpolated in single quotes inside scripted pipeline"
+                                echo '${A_KEY_PSW}'
                                 def terraformDir = 'my-terrform-dir'
                                 echo '${terraformDir}'
                         }
             }
         }
-        stage('parameter') {
+        stage('parameter Printing') {
             steps {
                 echo "Hello ${params.PERSON}"
 
