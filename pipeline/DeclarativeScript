@@ -2,10 +2,22 @@ pipeline {
     agent any
     stages {
         stage('Example') {
+            environment {
+            myENV1 = "ENV1"
+            }
             steps {
                 echo 'Hello World'
+                echo '${myENV1}'
+                echo 'Using double quotes for variable interporlation'
+                echo "${myENV1}"
 
                 script {
+                    echo 'This is inside script block'
+                    echo 'Using single quotes for variable interporlation'
+                    echo '${myENV1}'
+                    echo 'Using double quotes for variable interporlation'
+                    echo 'End of print inside the script block'
+                    echo "${myENV1}"
                     def browsers = ['chrome', 'firefox']
                     for (int i = 0; i < browsers.size(); ++i) {
                         echo "Testing the ${browsers[i]} browser"
