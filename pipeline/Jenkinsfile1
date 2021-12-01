@@ -79,14 +79,21 @@ pipeline {
                 sh 'echo "${A_KEY_PSW}"'
                 echo "Using single quotes wont do the groovy string interpolation...."
                 echo '${A_KEY_PSW}'
-                echo "Not using braces doesnt interpolate variable  $ENV_AT_STAGE_LEVEL"
+                echo "Not using braces DOES interpolate variable AS WELL inside double quote $ENV_AT_STAGE_LEVEL"
+
 
                 script {
-                            echo "But the same variable can be interpolated in single quotes inside scripted pipeline"
+                            echo "But the same variable can be interpolated in single quotes inside scripted pipeline: NOOOO, not even in scripted pipeline"
                             echo '${ENV_AT_STAGE_LEVEL}'
+                            echo 'But inside scripted pipeline with double quotes it can'
+                            echo "${ENV_AT_STAGE_LEVEL}"
+                            echo "Also the braces are not mandatory..."
+                            echo "$ENV_AT_STAGE_LEVEL"
                             echo "Trying this with password"
-                            echo "But the same variable can be interpolated in single quotes inside scripted pipeline"
                             echo '${A_KEY_PSW}'
+                            echo 'But inside scripted pipeline with double quotes it can'
+                            echo "${A_KEY_PSW}"
+                            echo 'But a variable defined inside a scripted pipeline using def can be interporalted with single quotes'
                             def terraformDir = 'my-terrform-dir'
                             echo '${terraformDir}'
                         }
