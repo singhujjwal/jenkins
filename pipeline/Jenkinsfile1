@@ -100,12 +100,24 @@ pipeline {
                             echo "${terraformDir}"
                             echo "Eithout the braces ? IT should "
                             echo "$terraformDir"
+
+
                         }
             }
         }
         stage('parameter Printing') {
             steps {
                 echo "Hello ${params.PERSON}"
+
+                echo "Without braces $params.PERSON"
+
+                echo "Just like that no it should not params.PERSON"
+
+                script {
+                    echo "What about inside a script section params.PERSON"
+                }
+
+
 
                 echo "Biography: ${params.BIOGRAPHY}"
 
