@@ -96,6 +96,10 @@ pipeline {
                             echo 'But a variable defined inside a scripted pipeline using def can be interporalted with single quotes'
                             def terraformDir = 'my-terrform-dir'
                             echo '${terraformDir}'
+                            echo 'NO not even a groovy varable cant be interpolated inside a single quote what'
+                            echo "${terraformDir}"
+                            echo "Eithout the braces ? IT should "
+                            echo "$terraformDir"
                         }
             }
         }
