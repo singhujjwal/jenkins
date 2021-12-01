@@ -39,12 +39,15 @@ pipeline {
     */
 
     stages {
+
+        /*******************************************************************
+        This gives an error you can't set an environment variable at stages
         environment {
-                //Setup an environment variable 
                 ENV_AT_STAGE_LEVEL = "env_at_stageS_level"
         }
+         *******************************************************************/
+         
         stage('Example Build') {
-
             options {
                 timeout(time: 1, unit: 'HOURS') 
             }
