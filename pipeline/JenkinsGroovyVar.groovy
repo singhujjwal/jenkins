@@ -42,7 +42,7 @@ pipeline {
             steps {
                 script
                 {
-                    if(${params.DRY_RUN} == true)
+                    if(params.DRY_RUN == true)
                     {
                         sh """
                         python3 pythonutils/arg_verifier.py -a xxxxxxxxxx -r ${params.aws_region} --dry-run
