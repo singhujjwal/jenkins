@@ -40,19 +40,16 @@ pipeline {
                 UNUSED = credentials("aws-${params.DEPLOYMENT_ENVIRONMENT}-creds")
             }
             steps {
-                dir('devops-tools') 
+                if(ENV['DRY_RUN'] == true)
                 {
-                    if(ENV['DRY_RUN'] == true)
-                    {
+                sh """
+                python3 pythonutils/arg_verifier.py -a xxxxxxxxxx -r ${params.aws_region} --dry-run
+                """
+                } else 
+                {
                     sh """
-                    python3 cleanup/ecr_cleanup_images.py -a xxxxxxxxxx -r ${params.aws_region} --dry-run
+                    python3 pythonutils/arg_verifier.py -a yyyyyyyyyyy -r ${params.aws_region} --dry-run
                     """
-                    } else 
-                    {
-                        sh """
-                        python3 cleanup/ecr_cleanup_images.py -a yyyyyyyyyyy -r ${params.aws_region} --dry-run
-                        """
-                    }
                 }
             }
         }
