@@ -9,6 +9,7 @@ ENV = [
 pipeline {
     agent any
     parameters {
+        booleanParam(defaultValue: true, description: 'Enable DRY RUN by default', name: 'DRY_RUN')
         choice(
             name: 'DEPLOYMENT_ENVIRONMENT',
             choices: [
@@ -18,8 +19,6 @@ pipeline {
             description: 'deployment environment'
         )
         string(defaultValue: '', description: 'AWS account region e.g. us-east-1', name: 'aws_region')
-        booleanParam(defaultValue: true, description: 'Enable DRY RUN by default', name: 'DRY_RUN')
-
     }
     options {
         buildDiscarder(
