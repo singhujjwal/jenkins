@@ -18,6 +18,8 @@ pipeline {
             description: 'deployment environment'
         )
         string(defaultValue: '', description: 'AWS account region e.g. us-east-1', name: 'aws_region')
+        booleanParam(defaultValue: true, description: 'Enable DRY RUN by default', name: 'DRY_RUN')
+
     }
     options {
         buildDiscarder(
@@ -41,7 +43,7 @@ pipeline {
             steps {
                 script
                 {
-                    if(ENV['DRY_RUN'] == true)
+                    if(${params.DRY_RUN} == true)
                     {
                         sh """
                         python3 pythonutils/arg_verifier.py -a xxxxxxxxxx -r ${params.aws_region} --dry-run
