@@ -49,7 +49,7 @@ pipeline {
                     } else 
                     {
                         sh """
-                        python3 pythonutils/arg_verifier.py -a yyyyyyyyyyy -r ${params.aws_region} --dry-run
+                        python3 pythonutils/arg_verifier.py -a yyyyyyyyyyy -r ${params.aws_region}
                         """
                     }
                 }
