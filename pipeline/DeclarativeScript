@@ -11,7 +11,8 @@ pipeline {
                 echo 'Using double quotes for variable interporlation'
                 echo "${myENV1}"
 
-                script {
+                script 
+                {
                     echo 'This is inside script block'
                     echo 'Using single quotes for variable interporlation'
                     echo '${myENV1}'

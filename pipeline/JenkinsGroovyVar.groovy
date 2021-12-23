@@ -40,16 +40,19 @@ pipeline {
                 UNUSED = credentials("aws-${params.DEPLOYMENT_ENVIRONMENT}-creds")
             }
             steps {
-                if(ENV['DRY_RUN'] == true)
+                script
                 {
-                sh """
-                python3 pythonutils/arg_verifier.py -a xxxxxxxxxx -r ${params.aws_region} --dry-run
-                """
-                } else 
-                {
-                    sh """
-                    python3 pythonutils/arg_verifier.py -a yyyyyyyyyyy -r ${params.aws_region} --dry-run
-                    """
+                    if(ENV['DRY_RUN'] == true)
+                    {
+                        sh """
+                        python3 pythonutils/arg_verifier.py -a xxxxxxxxxx -r ${params.aws_region} --dry-run
+                        """
+                    } else 
+                    {
+                        sh """
+                        python3 pythonutils/arg_verifier.py -a yyyyyyyyyyy -r ${params.aws_region} --dry-run
+                        """
+                    }
                 }
             }
         }
