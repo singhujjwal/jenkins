@@ -1,7 +1,8 @@
 //UJJWAL
 
 @groovy.transform.Field ENV 
-ENV = com.sophos.central.EnvironmentVariables.parse(env.getEnvironment(), [
+
+ENV = parse(env.getEnvironment(), [
       
         'DRY_RUN' : ['type': Boolean, 'required': false, 'default': true, 'description': 'Dont delete, Dry Run only'],
 ])
