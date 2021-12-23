@@ -2,10 +2,9 @@
 
 @groovy.transform.Field ENV 
 
-ENV = parse(env.getEnvironment(), [
-      
+ENV = [      
         'DRY_RUN' : ['type': Boolean, 'required': false, 'default': true, 'description': 'Dont delete, Dry Run only'],
-])
+]
 
 pipeline {
     agent any
