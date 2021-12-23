@@ -45,12 +45,12 @@ pipeline {
                     if(params.DRY_RUN == true)
                     {
                         sh """
-                        python3 pythonutils/arg_verifier.py -a xxxxxxxxxx -r ${params.aws_region} --dry-run
+                        python3 pythonutils/arg_verifier.py -r ${params.aws_region} --dry-run
                         """
                     } else 
                     {
                         sh """
-                        python3 pythonutils/arg_verifier.py -a yyyyyyyyyyy -r ${params.aws_region}
+                        python3 pythonutils/arg_verifier.py -r ${params.aws_region}
                         """
                     }
                 }
