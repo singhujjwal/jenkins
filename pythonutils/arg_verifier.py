@@ -7,7 +7,7 @@ def parse_command_line():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("-a", "--account",
-                        default=None, required=True,
+                        default=None, required=False,
                         help=("Target AWS region"))
     parser.add_argument("-r", "--region",
                         default=None, required=True,
