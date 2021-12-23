@@ -22,6 +22,7 @@ def parse_command_line():
     return args
 
 def main():
+    parse_command_line()
     print("This is my testing file")
 
 
