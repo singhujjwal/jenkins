@@ -8,4 +8,4 @@ def printFromInsideLibrary(){
   println ("Printing inside library.....")
 }
 
-return this
+checkOutFrom("kubernetes-plugin.git")
