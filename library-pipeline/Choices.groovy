@@ -5,7 +5,7 @@ pipeline {
         
     parameters 
     {
-        choice(name: 'ACCOUNT_NAME', choices: AwsAccount.values().collect { it.name() } , description: "AWS Account name")
+        choiceParam('ACCOUNT_NAME', AwsAccount.values().collect { it.name() })
         
     }
     stages
