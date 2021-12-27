@@ -1,4 +1,4 @@
-@Library('devops-library') _
+@Library('ujjwal-devops-library') _
 
 pipeline {
     agent none
