@@ -4,7 +4,7 @@
 accountList = AwsAccount.values().collect { it.name() }
 azAccountList = AzureAccount.values().collect { it.name() }
 
-allAccountList = accountList + azAccountList
+allAccountList = AllAccounts.getAllAccountsList()
 
 pipeline {
     agent any
