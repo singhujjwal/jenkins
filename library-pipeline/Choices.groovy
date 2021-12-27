@@ -2,6 +2,9 @@
 
 
 accountList = AwsAccount.values().collect { it.name() }
+azAccountList = AzureAccount.values().collect { it.name() }
+
+allAccountList = accountList + azAccountList
 
 pipeline {
     agent any
@@ -12,7 +15,7 @@ pipeline {
     {
         choice(
         name: 'ACCOUNT_NAME',
-        choices:  accountList,
+        choices:  allAccountList,
         description: 'Environments to use'
         )
     }

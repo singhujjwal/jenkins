@@ -1,11 +1,11 @@
 
-enum AwsAccount
+enum AzureAccount
 {
     
-    aws000xxx,
-    aws010yyy,
-    aws020zzz,
-    aws030aaa
+    azl000xxx,
+    azl010yyy,
+    azl020zzz,
+    azl030aaa
     
 
     @NonCPS
