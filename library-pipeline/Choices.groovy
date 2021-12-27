@@ -2,16 +2,17 @@
 
 pipeline {
     agent any
-
-    script {
-        accounts = AwsAccount.values().collect { it.name() }
+    final Closure parametersClosure = {
+            choiceParam {
+                name( 'AWS_ENVIRONMENT' )
+                choices( AwsAccount.values().collect { it.name() } )
+                description( 'aws_environment' )
+            }
     }
-    
-        
-    parameters
-    {
-        choiceParam('ACCOUNT_NAME', accounts)
-        
+    properties {
+        parameters {
+            parameterDefinitions parametersClosure.get()
+        }
     }
     stages
     {
