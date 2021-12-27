@@ -6,10 +6,10 @@ pipeline {
     {
         stage('Example-Use-Global-Vars')
         {
-            steps 
+            steps
             {
-                script 
-                { 
+                script
+                {
                     log.info 'Starting'
                     log.warning 'Nothing to do!'
                 }
