@@ -5,11 +5,13 @@ pipeline {
 
     //AwsAccount.values().collect { it.name() }
         
-    parameters 
+    parameters
     {
-        choice('ACCOUNT_NAME', ['dev', 'qa', 'staging'], "Environments to use")
-        
-
+        choice(
+        name: 'ACCOUNT_NAME',
+        choices:  ['dev', 'qa', 'staging'],
+        description: 'Environments to use'
+        )
     }
 
 
