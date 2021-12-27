@@ -2,10 +2,15 @@
 
 pipeline {
     agent any
+
+    script {
+        accounts = AwsAccount.values().collect { it.name() }
+    }
+    
         
-    parameters 
+    parameters
     {
-        choiceParam('ACCOUNT_NAME', AwsAccount.values().collect { it.name() })
+        choiceParam('ACCOUNT_NAME', accounts)
         
     }
     stages

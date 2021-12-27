@@ -10,12 +10,6 @@ enum AwsAccount
     k8sl020zzz,
     k8sl030aaa
     
-    final AwsAccount accountType
-
-    AwsAccount()
-    {
-        final String accountName = name()
-    }   
 
     @NonCPS
     static boolean isValidAccount(){
