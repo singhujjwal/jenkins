@@ -14,7 +14,7 @@ pipeline {
             }
         }
     }
-    properties {
+    options {
         parameters {
             parameterDefinitions parametersClosure.get()
         }
