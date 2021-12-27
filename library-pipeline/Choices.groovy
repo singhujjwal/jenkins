@@ -2,21 +2,26 @@
 
 pipeline {
     agent none
-    stages {
-        stage ('Example-Use-Global-Vars') {
-            steps {
-                // log.info 'Starting' 
-                script { 
+    stages 
+    {
+        stage ('Example-Use-Global-Vars') 
+        {
+            steps 
+            {
+                script 
+                { 
                     log.info 'Starting'
                     log.warning 'Nothing to do!'
                 }
             }
         }
-        stage ('Example-Use-built-in-step') {
-            steps {
-                    sayHello 'Joe'
-                    sayHello()
-                    job()
+        stage ('Example-Use-built-in-step') 
+        {
+            steps 
+            {
+                sayHello 'Joe'
+                sayHello()
+                job()
 
             }
         }
