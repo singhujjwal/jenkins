@@ -2,9 +2,9 @@
 
 pipeline {
     agent none
-    stages 
+    stages
     {
-        stage ('Example-Use-Global-Vars') 
+        stage('Example-Use-Global-Vars')
         {
             steps 
             {
@@ -15,9 +15,9 @@ pipeline {
                 }
             }
         }
-        stage ('Example-Use-built-in-step') 
+        stage('Example-Use-built-in-step')
         {
-            steps 
+            steps
             {
                 sayHello 'Joe'
                 sayHello()
