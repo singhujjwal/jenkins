@@ -5,15 +5,19 @@ pipeline {
 
     stages {
         stage('pre-stage'){
-        script {
-            final Closure parametersClosure = {
-                choiceParam {
-                    name( 'AWS_ENVIRONMENT' )
-                    choices( AwsAccount.values().collect { it.name() } )
-                    description( 'aws_environment' )
+            steps {
+                script 
+                {
+                    final Closure parametersClosure = 
+                    {
+                        choiceParam {
+                            name( 'AWS_ENVIRONMENT' )
+                            choices( AwsAccount.values().collect { it.name() } )
+                            description( 'aws_environment' )
+                        }
+                    }
                 }
             }
-        }
         }
     }
     
