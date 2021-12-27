@@ -21,8 +21,6 @@ pipeline {
             {
                 sayHello 'Joe'
                 sayHello()
-                job()
-
             }
         }
     }
