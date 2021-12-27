@@ -3,7 +3,8 @@
 pipeline {
     agent any
 
-    stage('pre-stage'){
+    stages {
+        stage('pre-stage'){
         script {
             final Closure parametersClosure = {
                 choiceParam {
@@ -13,7 +14,9 @@ pipeline {
                 }
             }
         }
+        }
     }
+    
     options {
         parameters {
             parameterDefinitions parametersClosure.get()
