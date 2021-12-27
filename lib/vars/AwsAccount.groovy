@@ -1,6 +1,3 @@
-package org.foo
-
-import com.cloudbees.groovy.cps.NonCPS
 
 enum AwsAccount
 {
