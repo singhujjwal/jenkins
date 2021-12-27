@@ -7,12 +7,12 @@ pipeline {
         
     parameters 
     {
-        choiceParam('ACCOUNT_NAME', ['dev', 'qa', 'staging'], "Environments to use")
+        choice('ACCOUNT_NAME', ['dev', 'qa', 'staging'], "Environments to use")
         
 
     }
 
-    
+
     stages
     {
         stage('Example-Use-Global-Vars')
