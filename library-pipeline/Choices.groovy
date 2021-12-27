@@ -1,15 +1,18 @@
 @Library('ujjwal-devops-library') _
 
+
+accountList = AwsAccount.values().collect { it.name() }
+
 pipeline {
     agent any
 
-    //AwsAccount.values().collect { it.name() }
-        
+    //
+
     parameters
     {
         choice(
         name: 'ACCOUNT_NAME',
-        choices:  ['dev', 'qa', 'staging'],
+        choices:  accountList,
         description: 'Environments to use'
         )
     }
