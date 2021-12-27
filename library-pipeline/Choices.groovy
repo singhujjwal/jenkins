@@ -6,17 +6,7 @@ pipeline {
     {
         stage('Example-Use-Global-Vars')
         {
-            steps
-            {
-                script
-                {
-                    log.info 'Starting'
-                    log.warning 'Nothing to do!'
-                    sayHello 'Joe'
-                    sayHello()
-                    job()
-                }
-            }
+            echo "Hello World!!!!"
         }
     }
 }
