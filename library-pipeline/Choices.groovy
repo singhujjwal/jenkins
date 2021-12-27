@@ -3,29 +3,16 @@
 pipeline {
     agent any
 
-    stages {
-        stage('pre-stage'){
-            steps {
-                script 
-                {
-                    final Closure parametersClosure = 
-                    {
-                        choiceParam {
-                            name( 'AWS_ENVIRONMENT' )
-                            choices( AwsAccount.values().collect { it.name() } )
-                            description( 'aws_environment' )
-                        }
-                    }
-                }
-            }
-        }
+    //AwsAccount.values().collect { it.name() }
+        
+    parameters 
+    {
+        choiceParam('ACCOUNT_NAME', ['dev', 'qa', 'staging'], "Environments to use")
+        
+
     }
+
     
-    options {
-        parameters {
-            parameterDefinitions parametersClosure.get()
-        }
-    }
     stages
     {
         stage('Example-Use-Global-Vars')
