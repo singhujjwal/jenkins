@@ -1,5 +1,6 @@
 //node(label: 'label-a') {
-    node('label-a') {  //This will not work
+    // node('label-a') {  //This will not work
+    node('label-c') {  //This will not work
 
         deleteDir()
 
