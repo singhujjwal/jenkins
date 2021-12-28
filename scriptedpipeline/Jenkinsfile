@@ -1,6 +1,15 @@
+
+
+/*
+Both below styles work but the preferred one is the below one, as label: is
+ all that what it means all the time and never the node name
+
+*/
 //node(label: 'label-a') {
-    // node('label-a') {  //This will not work
-    node('label-c') {  //This will not work
+// node('label-a') {  
+
+//No labels and only the name
+node('mynode') { 
 
         deleteDir()
 
