@@ -10,7 +10,8 @@ Both below styles work but the preferred one is the below one, as label: is
 
 //No labels and only the name this waits for a node with the name as 'mynode' so to be 
 //explicit I always use label: 'label-name'
-node('DONOTUSE || xyxzz') { 
+
+node('DONOTUSE && asdasda') { 
 
         deleteDir()
 
