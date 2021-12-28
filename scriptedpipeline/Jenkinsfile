@@ -1,0 +1,15 @@
+node(label: 'label-a') {
+
+        deleteDir()
+
+        stage('checkout') {
+           
+           echo "Hello World!!!"
+        }
+
+        stage('build') {
+            println('Building.....')
+            echo "Build"
+        }
+}
+
