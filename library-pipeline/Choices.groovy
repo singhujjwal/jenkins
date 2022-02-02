@@ -1,9 +1,6 @@
 @Library('ujjwal-devops-library') _
 
 
-accountList = AwsAccount.values().collect { it.name() }
-azAccountList = AzureAccount.values().collect { it.name() }
-
 allAccountList = AllAccounts.getAllAccountsList()
 
 pipeline {
