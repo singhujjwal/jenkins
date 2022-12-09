@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 
 import argparse
 
@@ -18,11 +18,16 @@ def parse_command_line():
     parser.add_argument("-t", "--title",
                         default=None, required=False,
                         help=("Inspector vulnerability title to search for"))
+    parser.add_argument("-m", "--is-msg-disabled", default= "False",
+                         required=False, help=("Set to True to disable MSG spinnaker manifest"))
     args = parser.parse_args()
     return args
 
 def main():
-    parse_command_line()
+    args = parse_command_line()
+    print(type(args.is_msg_disabled))
+    if args.is_msg_disabled.lower() == "false":
+        print ("MSG is disabled...")
     print("This is my testing file")
 
 
